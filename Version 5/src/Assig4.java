@@ -612,9 +612,10 @@ class DataMatrix implements BarcodeIO
       clearImage(); // clear in case of old data
       actualWidth = text.length() + 2; //plus two because of border
       actualHeight = 10; 
+      //forgot right alternating pattern!!
       
-      //setting spine and right & top alternating pattern
-      //top alternating pattern
+      //setting spine
+      //top
       for(int i = 0; i < actualWidth; i += 2)
       {
          image.setPixel(BarcodeImage.MAX_HEIGHT - actualHeight, i, true);
@@ -628,11 +629,6 @@ class DataMatrix implements BarcodeIO
       for(int i = 0; i < actualWidth; i++)
       {
          image.setPixel(BarcodeImage.MAX_HEIGHT - 1, i, true);
-      }
-      //right alternating pattern
-      for(int i = 0; i < actualWidth; i += 2)
-      {
-         image.setPixel(BarcodeImage.MAX_HEIGHT - actualHeight, i, true);
       }
 
       //creating black elements in fields
